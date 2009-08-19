@@ -3,7 +3,7 @@
 # l: learning rate parameter
 
 N=21
-s=10
+s=5
 l=0.03
 
 # generate traning data
@@ -42,6 +42,8 @@ for (i in 1:N) {
   cat("===d2===\n")
   print(d2)
   w2 = w2 - l * d2 * c(1, z)
+  cat("===w2===\n")
+  print(w2)
 
   d1 = d2 %*% (1-tanh(t(a))^2) * t(w2[1,1:s])
   cat("===d1===\n")
